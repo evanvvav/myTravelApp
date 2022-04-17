@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, SafeAreaView,  } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, } from 'react-native';
 import Entype from 'react-native-vector-icons/Entypo';
 import HomeScreen from './src/screens/Home';
+import Post from './src/components/Post';
 
 export default function App() {
   return (
@@ -9,7 +10,8 @@ export default function App() {
     <StatusBar style="auto"/>
     <SafeAreaView>
       
-      <HomeScreen/>
+      {/*<HomeScreen />*/}
+      <Post />
      
     </SafeAreaView>
     </>
