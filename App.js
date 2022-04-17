@@ -12,8 +12,8 @@ import { getPlacesData } from './src/api';
 
 export default function App() {
 
-  const [places, setPlaces] = useState([]);
-  const [coordinates, setCoordinates] = useState({});
+  // const [places, setPlaces] = useState([]);
+  // const [coordinates, setCoordinates] = useState({});
 
   // const post1 = places[0];
 

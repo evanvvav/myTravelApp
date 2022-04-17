@@ -29,4 +29,4 @@ export const getPlacesData = async () => {
     }
 }
 
-// If Doesnt work reubild the function
+// If Doesnt work rebuild the function

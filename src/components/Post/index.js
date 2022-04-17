@@ -12,7 +12,7 @@ export default function Post( props ) {
             {/* Images */}
             <Image 
                 style={styles.image} 
-                source={{uri: post.photo.images.large.url}}
+                source={{uri: post.photo ? post.photo.images.large.url : null}}
             />
             {/* Star & Rating */}
             <Text style={styles.raiting}>
