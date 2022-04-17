@@ -2,7 +2,6 @@ import React from 'react';
 import { Text, View, Image } from 'react-native';
 import styles from './styles';
 import Fontisto from 'react-native-vector-icons/Fontisto';
-import { clickProps } from 'react-native-web/dist/cjs/modules/forwardedProps';
 
 export default function Post( props ) {
 

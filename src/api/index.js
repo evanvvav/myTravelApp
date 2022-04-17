@@ -28,3 +28,5 @@ export const getPlacesData = async () => {
         console.log(error)
     }
 }
+
+// If Doesnt work reubild the function

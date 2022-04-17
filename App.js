@@ -4,6 +4,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, } from 'react-native';
 import HomeScreen from './src/screens/Home';
 import Post from './src/components/Post';
+import SearchResultsScreen from "./src/screens/SearchResults";
+
 
 import { getPlacesData } from './src/api';
 
@@ -13,15 +15,15 @@ export default function App() {
   const [places, setPlaces] = useState([]);
   const [coordinates, setCoordinates] = useState({});
 
-  const post1 = places[0];
+  // const post1 = places[0];
 
-  useEffect(() => {
-    getPlacesData()
-      .then((data) => {
-        /*console.log(data);*/
-        setPlaces(data);
-       })
-  }, [])
+  // useEffect(() => {
+  //   getPlacesData()
+  //     .then((data) => {
+  //       /*console.log(data);*/
+  //       setPlaces(data);
+  //      })
+  // }, [])
 
   return (
     <>
@@ -29,7 +31,8 @@ export default function App() {
     <SafeAreaView>
       
       {/*<HomeScreen />*/}
-      <Post post={post1} />
+      {/* <Post post={post1} /> */}
+      <SearchResultsScreen /> 
       
      
     </SafeAreaView>
