@@ -2,27 +2,31 @@ import React from 'react';
 import { Text, View, Image } from 'react-native';
 import styles from './styles';
 import Fontisto from 'react-native-vector-icons/Fontisto';
+import { clickProps } from 'react-native-web/dist/cjs/modules/forwardedProps';
 
-export default function Post() {
+export default function Post( props ) {
+
+    const post = props.post; 
+    
     return (
         <View style={styles.container}>
             {/* Images */}
             <Image 
                 style={styles.image} 
-                source={{uri: 'http://media-cdn.tripadvisor.com/media/photo-s/22/6c/e5/7f/exterior-hotel-kamp-building.jpg'}}
+                source={{uri: post.photo.images.large.url}}
             />
             {/* Star & Rating */}
             <Text style={styles.raiting}>
                 <Fontisto name='star' size={13} color={'#f15454'}/>
-                <Text style={styles.raitingText}> 4.5</Text>
+                <Text style={styles.raitingText}> {post.rating}</Text>
             </Text>
             {/* Name */}
             <Text style={styles.name}>
-                Hotel Kamp * Helsinki, Uusimaa
+                {post.name} │ {post.location_string}
             </Text>
             {/* Prices / night */}
             <Text style={styles.prices}>
-                <Text style={styles.price}>€80 </Text>
+                <Text style={styles.price}>{post.price} </Text>
                  / night
             </Text>
             
