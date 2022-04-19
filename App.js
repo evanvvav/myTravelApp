@@ -5,6 +5,7 @@ import { StyleSheet, Text, View, SafeAreaView, } from 'react-native';
 import HomeScreen from './src/screens/Home';
 import Post from './src/components/Post';
 import SearchResultsScreen from "./src/screens/SearchResults";
+import DestinationSearch from "./src/screens/DestinationSearch";
 
 
 import { getPlacesData } from './src/api';
@@ -32,7 +33,8 @@ export default function App() {
       
       {/*<HomeScreen />*/}
       {/* <Post post={post1} /> */}
-      <SearchResultsScreen /> 
+      {/* <SearchResultsScreen />  */}
+      <DestinationSearch />
       
      
     </SafeAreaView>
