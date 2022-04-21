@@ -5,12 +5,12 @@ const styles = StyleSheet.create({
      width: '100%', 
      height: 500, 
      resizeMode: 'cover',
-     justifyContent: 'center'
+     justifyContent: 'center',
  }, 
  title: {
     fontSize: 80,
     fontWeight: 'bold',
-    color: 'white', 
+    color: 'black', 
     width: '70%',
     marginLeft: 25, 
  },
@@ -31,21 +31,21 @@ const styles = StyleSheet.create({
  },
   searchButton: {
     backgroundColor: '#fff',
-    width: Dimensions.get('screen').width - 20,
-    height: 55,
+    width: Dimensions.get('screen').width - 30,
+    height: 50,
     borderRadius: 30,
-    marginHorizontal: 10,
+    marginHorizontal: 15,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',
-    top: 50,
+    top: 35,
     zIndex: 100,
     elevation: (Platform.OS === 'android') ? 2 : 0,
  },
  searchButtonText: {
     fontSize: 16,
-    fontWeight: 'bold',
+    //fontWeight: 'bold',
 
  },
  

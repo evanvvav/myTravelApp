@@ -1,6 +1,6 @@
 import axios from "axios";
 
-//const URL = 'https://travel-advisor.p.rapidapi.com/hotels/list-by-latlng'
+const URL = 'https://travel-advisor.p.rapidapi.com/hotels/list-by-latlng'
 
 const options = { 
   params: {

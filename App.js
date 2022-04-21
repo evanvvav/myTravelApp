@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import { useState, useEffect } from "react";
 
 import { StatusBar } from 'expo-status-bar';
@@ -9,6 +10,8 @@ import DestinationSearch from "./src/screens/DestinationSearch";
 
 
 import { getPlacesData } from './src/api';
+
+import Router from './src/navigation/Router';
 
 
 export default function App() {
@@ -29,15 +32,16 @@ export default function App() {
   return (
     <>
     <StatusBar style="auto"/>
-    <SafeAreaView>
+    {/* <SafeAreaView> */}
+    <Router />
       
-      {/*<HomeScreen />*/}
+      {/* <HomeScreen /> */}
       {/* <Post post={post1} /> */}
       {/* <SearchResultsScreen />  */}
-      <DestinationSearch />
+      {/* <DestinationSearch /> */}
       
      
-    </SafeAreaView>
+    {/* </SafeAreaView> */}
     </>
   );
 }

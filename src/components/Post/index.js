@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, } from 'react-native';
 import styles from './styles';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 
@@ -16,7 +16,7 @@ export default function Post( props ) {
             />
             {/* Star & Rating */}
             <Text style={styles.raiting}>
-                <Fontisto name='star' size={13} color={'#f15454'}/>
+                <Fontisto name='star' size={13} color={'#C996CC'}/>
                 <Text style={styles.raitingText}> {post.rating}</Text>
             </Text>
             {/* Name */}

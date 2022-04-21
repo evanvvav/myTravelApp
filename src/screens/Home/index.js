@@ -3,18 +3,22 @@ import { Text, View, ImageBackground, Pressable } from 'react-native';
 import styles from './styles';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 
+import { useNavigation } from '@react-navigation/native';
 
 export default function HomeScreen() {
+
+    const navigation = useNavigation();
+
     return (
         <View>
             <ImageBackground 
-                source={require('../../../assets/images/wallpaper.jpg')} 
+                source={require('../../../assets/images/72212087d18f76984c49af1b5e80b1a5--hand-sketch-sketch-drawing.jpg')} 
                 style={styles.image}
             >
 
-            <Pressable style={styles.searchButton} onPress={() => console.warn('Search Button Clicked')}>
-                <Fontisto name='search' size={25} color={'#f15454'}/>
-                <Text style={styles.searchButtonText}>Where are you going?</Text>
+            <Pressable style={styles.searchButton} onPress={() => navigation.navigate('Destination Search')}>
+                <Fontisto name='search' size={18} color={'#C996CC'}/>
+                <Text style={styles.searchButtonText}> What city you looking for?</Text>
             </Pressable>
 
                 <Text style={styles.title}>
@@ -22,7 +26,7 @@ export default function HomeScreen() {
                 </Text>
                 
             <Pressable style={styles.button} onPress={() => console.warn('Expolore Button Clicked')}>
-                <Text style={styles.buttonText}>Expolore nearby stays</Text>
+                <Text style={styles.buttonText}>Expolore hotels nearby</Text>
             </Pressable>
 
             </ImageBackground>
