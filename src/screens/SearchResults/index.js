@@ -25,7 +25,8 @@ export default function SearchResultsScreen() {
         <View>
             <FlatList
                 data={places}
-                renderItem={({item}) => <Post post={item} />}
+                renderItem={({item, index}) => <Post post={item} />}
+                keyExtractor={(item, index) => index.toString()}
             
             />
         </View>

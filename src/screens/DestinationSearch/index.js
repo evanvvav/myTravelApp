@@ -27,7 +27,15 @@ export default function DestinationSearch() {
             <FlatList 
                 data={searchFakeData}
                 renderItem={({item}) => (
-                <Pressable onPress={() => navigation.navigate('Hotel Results')} style={styles.row}> 
+                <Pressable onPress={() => 
+                    navigation.navigate('Home', {
+                        screen: 'Explore',
+                        params: {
+                            screen: 'SearchResults',
+                        },
+                    })}
+                
+                style={styles.row}> 
                     <View style={styles.iconContainer}>
                         <Entypo name={'location-pin'} size={30} />
                     </View>
