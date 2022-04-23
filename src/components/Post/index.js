@@ -1,14 +1,21 @@
 import React from 'react';
-import { Text, View, Image, } from 'react-native';
+import { Text, View, Image, Pressable} from 'react-native';
 import styles from './styles';
 import Fontisto from 'react-native-vector-icons/Fontisto';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Post( props ) {
 
     const post = props.post; 
+
+    const navigation = useNavigation();
     
+    const goToPostPage = () => { 
+        navigation.navigate('Post', {postId: post.id});
+    }
+
     return (
-        <View style={styles.container}>
+        <Pressable onPress={goToPostPage} style={styles.container}>
             {/* Images */}
             <Image 
                 style={styles.image} 
@@ -29,15 +36,6 @@ export default function Post( props ) {
                  / night
             </Text>
             
-
-            {/* Images */}
-            {/* Name */}
-            {/* Star & Rating & Reviews amount */}
-            {/* #86 of 506 hotels in New York City */}
-            {/* Visit webcite Button huge*/}
-            {/* Prices / night Button huge*/}
-
-            
-        </View>
+        </Pressable>
     );
 }

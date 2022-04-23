@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import DestinationSearch from '../screens/DestinationSearch';
 import HomeTabNavigator from './HomeTabNavigator';
 import SearchResultsScreen from '../screens/SearchResults';
+import PostScreen from '../screens/PostScreen';
 
 const Stack = createStackNavigator();
 
@@ -31,6 +32,13 @@ export default function Router() {
                 component={SearchResultsScreen}  
                 options={{
                     title: 'Find your place to stay'
+                }}
+                />
+                <Stack.Screen 
+                name={'Post'} 
+                component={PostScreen}  
+                options={{
+                    title: 'Accommadation'
                 }}
                 />
             </Stack.Navigator>           

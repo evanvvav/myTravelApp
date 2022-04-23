@@ -7,6 +7,7 @@ import ExploreNavigator from './ExploreNavigator';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
+import PostScreen from '../screens/PostScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -20,6 +21,7 @@ export default function HomeTabNavigator() {
             <Tab.Screen 
                 name={'Explore'}
                 component={ExploreNavigator}
+                //component={PostScreen}
                 options={{
                     tabBarIcon: ({color}) => (
                         <Fontisto name='search' size={25} color={color} />
