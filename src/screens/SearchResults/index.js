@@ -40,12 +40,6 @@ export default function SearchResultsScreen() {
       });
    }, [coordinates]);
 
-   // getPlacesData(coordinates.lat, coordinates.lng).then((data) => {
-   //    //console.log(data);
-   //    setPlaces(data);
-   //    setLoading(true);
-   // });
-
    return (
       <View style={styles.container}>
          {loading ? (

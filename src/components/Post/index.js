@@ -10,7 +10,7 @@ export default function Post(props) {
    const navigation = useNavigation();
 
    const goToPostPage = () => {
-      navigation.navigate("Post", { postId: post.location_id });
+      navigation.navigate("Post", { postId: post });
    };
 
    return (

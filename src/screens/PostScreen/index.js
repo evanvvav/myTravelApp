@@ -1,46 +1,57 @@
-import { useState, useEffect } from "react";
 import React from "react";
-import { View, ActivityIndicator } from "react-native";
-import DetailedPost from "../../components/DetailedPost";
+import {
+   View,
+   ActivityIndicator,
+   Text,
+   Image,
+   Pressable,
+   Linking,
+} from "react-native";
+import styles from "./styles";
+import Fontisto from "react-native-vector-icons/Fontisto";
 import { useRoute } from "@react-navigation/native";
-import { StyleSheet } from "react-native";
-import { getPlacesData } from "../../api";
 
 export default function PostScreen(props) {
    const route = useRoute();
-   const [places, setPlaces] = useState([false]);
-   const [loading, setLoading] = useState(false);
-
-   const post = places.find(
-      (place) => place.location_id === route.params.postId
-   );
-
-   useEffect(() => {
-      getPlacesData().then((data) => {
-         //console.log(data);
-         setPlaces(data);
-         setLoading(true);
-      });
-   }, []);
+   const post = route.params.postId;
 
    return (
-      <View>
-         {loading ? (
-            <DetailedPost post={post} />
-         ) : (
-            <View style={styles.loading}>
-               <ActivityIndicator size="large" color="#C996CC" />
-            </View>
-         )}
+      <View style={styles.container}>
+         {/* Images */}
+
+         <Image
+            style={styles.image}
+            source={{ uri: post.photo ? post.photo.images.large.url : null }}
+         />
+         {/* Star & Rating & Reviews amount */}
+         <Text style={styles.raiting}>
+            <Fontisto name="star" size={13} color={"#C996CC"} />
+            <Text style={styles.raitingText}> {post.rating}</Text>
+            <Text style={styles.num_reviews}>
+               {" "}
+               ({post.num_reviews} reviews)
+            </Text>
+         </Text>
+         {/* Name */}
+         <Text style={styles.name}>
+            {post.name} │ {post.location_string}
+         </Text>
+
+         {/* #86 of 506 hotels in New York City */}
+         <Text style={styles.ranking}>{post.ranking}</Text>
+         {/* Prices / night Button huge*/}
+         <Text style={styles.prices}>
+            <Text style={styles.price}>{post.price} </Text>/ night
+         </Text>
+         {/* Visit webcite Button huge*/}
+         <Pressable
+            style={styles.booking}
+            onPress={() =>
+               Linking.openURL(post.business_listings.mobile_contacts[0].value)
+            }
+         >
+            <Text style={styles.bookingText}>Book from webcite</Text>
+         </Pressable>
       </View>
    );
 }
-
-const styles = StyleSheet.create({
-   loading: {
-      marginTop: "50%",
-   },
-   container: {
-      justifyContent: "center",
-   },
-});
