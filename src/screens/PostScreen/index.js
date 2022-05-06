@@ -30,7 +30,9 @@ export default function PostScreen() {
             {loading ? 
 
             <DetailedPost post={post}
-            /> : <ActivityIndicator size="large" color="#C996CC" />
+       /> : <View style={styles.loading}>
+                <ActivityIndicator size="large" color='#C996CC'/>
+            </View>
 
             }
 
@@ -39,6 +41,9 @@ export default function PostScreen() {
 }
 
 const styles = StyleSheet.create({
+    loading: {
+        marginTop: '50%',
+    },
     container: {
         justifyContent: 'center',
         },

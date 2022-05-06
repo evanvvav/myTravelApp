@@ -25,9 +25,11 @@ export default function SearchResultsScreen() {
             
             <FlatList
                 data={places}
-                renderItem={({item, index}) => <Post post={item} />}
+                renderItem={({item, index}) => <Post post={item}/>}
                 keyExtractor={(item, index) => index.toString()}
-            /> : <ActivityIndicator size="large" color="#C996CC" />
+       /> : <View style={styles.loading}>
+                <ActivityIndicator size="large" color='#C996CC'/>
+            </View>
 
             }
         </View>
@@ -35,6 +37,9 @@ export default function SearchResultsScreen() {
 }
 
 const styles = StyleSheet.create({
+    loading: {
+        marginTop: '50%',
+    },
     container: {
         justifyContent: 'center',
         },
