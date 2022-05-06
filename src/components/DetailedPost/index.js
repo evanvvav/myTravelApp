@@ -5,8 +5,6 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 
 export default function DetailedPost( props ) {
 
-    console.log(props);
-
     const post = props.post; 
     
     return (

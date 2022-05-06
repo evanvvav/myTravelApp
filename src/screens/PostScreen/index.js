@@ -6,14 +6,13 @@ import { useRoute } from "@react-navigation/native";
 import { StyleSheet } from "react-native";
 import { getPlacesData } from '../../api';
 
-export default function PostScreen() {
+export default function PostScreen( props ) {
     
     const route = useRoute();
     const [places, setPlaces] = useState([false]);
     const [loading, setLoading] = useState(false);
 
-   const post = places[1];
-   //.find(place => place === route.params.id);
+   const post = places.find(place => place.location_id === route.params.postId)
 
     useEffect(() => {
     getPlacesData()
@@ -21,7 +20,6 @@ export default function PostScreen() {
         //console.log(data);
         setPlaces(data);
         setLoading(true);
-        console.log(route.params.location_id);
        })
     }, [])
 

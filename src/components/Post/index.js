@@ -8,10 +8,11 @@ export default function Post( props ) {
 
     const post = props.post; 
 
+
     const navigation = useNavigation();
     
     const goToPostPage = () => { 
-        navigation.navigate('Post', {postId: post.id});
+        navigation.navigate('Post', {postId: post.location_id});
     }
 
     return (
