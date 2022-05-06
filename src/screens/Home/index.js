@@ -29,7 +29,7 @@ export default function HomeScreen() {
 
             <Pressable
                style={styles.button}
-               onPress={() => console.warn("Expolore Button Clicked")}
+               onPress={() => navigation.navigate("SearchResults")}
             >
                <Text style={styles.buttonText}>Expolore hotels nearby</Text>
             </Pressable>
