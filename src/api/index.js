@@ -2,36 +2,42 @@ import axios from "axios";
 
 // New Version
 
-export const getPlacesData = async (lat, lon) => {
-  try {
-    const { data: { data } } = await axios.get('https://travel-advisor.p.rapidapi.com/hotels/list-by-latlng', {
-      params: {
-        latitude: '60.183832598',
-        longitude: '24.942829562',
-        lang: 'en_US',
-        hotel_class: '5',
-        limit: '30',
-        currency: 'EUR',
-        subcategory: 'hotel,bb,specialty'
-    },
-      headers: {
-        'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com',
-        'X-RapidAPI-Key': '25a22228abmshe90e31e943b8facp153abfjsn326786a3036f',
-    },
-    });
+export const getPlacesData = async (lat, lng) => {
+   try {
+      console.log(lat);
+      const {
+         data: { data },
+      } = await axios.get(
+         "https://travel-advisor.p.rapidapi.com/hotels/list-by-latlng",
+         {
+            params: {
+               latitude: lat,
+               longitude: lng,
+               lang: "en_US",
+               hotel_class: "5",
+               limit: "30",
+               currency: "EUR",
+               subcategory: "hotel,bb,specialty",
+            },
+            headers: {
+               "X-RapidAPI-Host": "travel-advisor.p.rapidapi.com",
+               "X-RapidAPI-Key":
+                  "a999dca152mshb6128522b58bcbdp1978b8jsnea01b234dd07",
+            },
+         }
+      );
 
-    return data;
-
-    } catch (error) {
-    console.log(error);
-  }
+      return data;
+   } catch (error) {
+      console.log(error);
+   }
 };
 
 // Old Version
 
 // const URL = 'https://travel-advisor.p.rapidapi.com/hotels/list-by-latlng'
 
-// const options = { 
+// const options = {
 //   params: {
 //     latitude: '60.183832598',
 //     longitude: '24.942829562',
@@ -50,7 +56,7 @@ export const getPlacesData = async (lat, lon) => {
 // export const getPlacesData = async () => {
 //     try {
 //         const { data: { data } } = await axios.get(URL, options);
-        
+
 //         return data;
 
 //     } catch (error) {
