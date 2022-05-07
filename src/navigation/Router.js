@@ -38,7 +38,7 @@ export default function Router() {
                name={"Post"}
                component={PostScreen}
                options={{
-                  title: "Accommadation",
+                  title: "Details",
                }}
             />
          </Stack.Navigator>

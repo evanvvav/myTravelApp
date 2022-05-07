@@ -1,12 +1,5 @@
 import React from "react";
-import {
-   View,
-   ActivityIndicator,
-   Text,
-   Image,
-   Pressable,
-   Linking,
-} from "react-native";
+import { View, Text, Image, Pressable, Linking } from "react-native";
 import styles from "./styles";
 import Fontisto from "react-native-vector-icons/Fontisto";
 import { useRoute } from "@react-navigation/native";

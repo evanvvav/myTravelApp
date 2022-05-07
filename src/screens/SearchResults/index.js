@@ -1,13 +1,6 @@
 import { useState, useEffect } from "react";
 import React from "react";
-import {
-   View,
-   FlatList,
-   ActivityIndicator,
-   TextInput,
-   Picker,
-   Dimensions,
-} from "react-native";
+import { View, FlatList, ActivityIndicator, Dimensions } from "react-native";
 import Post from "../../components/Post";
 import { StyleSheet } from "react-native";
 import { getPlacesData } from "../../api";
@@ -18,23 +11,15 @@ import * as Location from "expo-location";
 
 export default function SearchResultsScreen() {
    const [places, setPlaces] = useState([false]);
-   const [loading, setLoading] = useState(false);
    const [coordinates, setCoordinates] = useState({});
-
-   const [stars, setStars] = useState("");
-
-   const [selectedValue, setSelectedValue] = useState("java");
-
    const [open, setOpen] = useState(false);
    const [value, setValue] = useState("5");
    const [items, setItems] = useState([
-      { label: "5", value: "5" },
-      { label: "4", value: "4" },
-      { label: "3", value: "3" },
-      { label: "2", value: "1,2" },
+      { label: "5 star", value: "5" },
+      { label: "4 star", value: "4" },
+      { label: "3 star ", value: "3" },
+      { label: "2 star", value: "1,2" },
    ]);
-
-   // const coordinates = { lat: 60.183832598, lng: 24.942829562 };
 
    useEffect(() => {
       (async () => {
@@ -58,13 +43,12 @@ export default function SearchResultsScreen() {
 
       getPlacesData(coordinates.lat, coordinates.lng, value).then((data) => {
          setPlaces(data);
-         setLoading(true);
       });
    }, [coordinates, value]);
 
    return (
       <View style={styles.container}>
-         {loading ? (
+         {places ? (
             <>
                <DropDownPicker
                   style={styles.picker}
@@ -77,7 +61,6 @@ export default function SearchResultsScreen() {
                />
 
                <FlatList
-                  // defaultCoordinates={coordinates}
                   data={places}
                   renderItem={({ item, index }) => <Post post={item} />}
                   keyExtractor={(item, index) => index.toString()}

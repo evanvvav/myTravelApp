@@ -25,11 +25,11 @@ export default function HomeScreen() {
                </Text>
             </Pressable>
 
-            <Text style={styles.title}>Go Near</Text>
+            <Text style={styles.title}>Find Place To Stay</Text>
 
             <Pressable
                style={styles.button}
-               onPress={() => navigation.navigate("SearchResults")}
+               onPress={() => navigation.navigate("Close to you")}
             >
                <Text style={styles.buttonText}>Expolore hotels nearby</Text>
             </Pressable>
