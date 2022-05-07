@@ -2,7 +2,7 @@ import axios from "axios";
 
 // New Version
 
-export const getPlacesData = async (lat, lng) => {
+export const getPlacesData = async (lat, lng, value) => {
    try {
       console.log(lat);
       const {
@@ -13,16 +13,15 @@ export const getPlacesData = async (lat, lng) => {
             params: {
                latitude: lat,
                longitude: lng,
-               lang: "en_US",
-               hotel_class: "5",
+               hotel_class: value,
                limit: "30",
                currency: "EUR",
-               subcategory: "hotel,bb,specialty",
+               subcategory: "hotel",
             },
             headers: {
                "X-RapidAPI-Host": "travel-advisor.p.rapidapi.com",
                "X-RapidAPI-Key":
-                  "a999dca152mshb6128522b58bcbdp1978b8jsnea01b234dd07",
+                  "41a079cf8dmsh6ea551e0ee5110cp1d3fefjsn253a049d85cf",
             },
          }
       );

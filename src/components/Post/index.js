@@ -14,25 +14,31 @@ export default function Post(props) {
    };
 
    return (
-      <Pressable onPress={goToPostPage} style={styles.container}>
-         {/* Images */}
-         <Image
-            style={styles.image}
-            source={{ uri: post.photo ? post.photo.images.large.url : null }}
-         />
-         {/* Star & Rating */}
-         <Text style={styles.raiting}>
-            <Fontisto name="star" size={13} color={"#C996CC"} />
-            <Text style={styles.raitingText}> {post.rating}</Text>
-         </Text>
-         {/* Name */}
-         <Text style={styles.name}>
-            {post.name} │ {post.location_string}
-         </Text>
-         {/* Prices / night */}
-         <Text style={styles.prices}>
-            <Text style={styles.price}>{post.price} </Text>/ night
-         </Text>
-      </Pressable>
+      <>
+         {post.name && (
+            <Pressable onPress={goToPostPage} style={styles.container}>
+               {/* Images */}
+               <Image
+                  style={styles.image}
+                  source={{
+                     uri: post.photo ? post.photo.images.large.url : null,
+                  }}
+               />
+               {/* Star & Rating */}
+               <Text style={styles.raiting}>
+                  <Fontisto name="star" size={13} color={"#C996CC"} />
+                  <Text style={styles.raitingText}> {post.hotel_class}</Text>
+               </Text>
+               {/* Name */}
+               <Text style={styles.name}>
+                  {post.name} │ {post.location_string}
+               </Text>
+               {/* Prices / night */}
+               <Text style={styles.prices}>
+                  <Text style={styles.price}>{post.price} </Text>/ night
+               </Text>
+            </Pressable>
+         )}
+      </>
    );
 }

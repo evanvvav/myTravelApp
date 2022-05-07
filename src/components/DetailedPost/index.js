@@ -17,7 +17,7 @@ export default function DetailedPost(props) {
          {/* Star & Rating & Reviews amount */}
          <Text style={styles.raiting}>
             <Fontisto name="star" size={13} color={"#C996CC"} />
-            <Text style={styles.raitingText}> {post.rating}</Text>
+            <Text style={styles.raitingText}> {post.hotel_class}</Text>
             <Text style={styles.num_reviews}>
                {" "}
                ({post.num_reviews} reviews)
