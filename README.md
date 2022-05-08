@@ -5,6 +5,8 @@ Sovellus pyytää käyttäjältä sijaintia ja tulostaa lähellä olevia hotelle
 
 Alunperin suunnitelman mukaan oli tarkoitus vielä lisätä mahdollisuus selata hotelleja eri kaupungeista hakemalla kaupungin nimeä. Tätä en enää kerennyt toteuttaa, mutta mielestäni tämä sovellus oli jo hyvä sellaisenaan, mutta portfoliota varten jatkossa voisin vielä mahdollisesti jatkokehittää sovellusta. Sovellus käyttää stack ja tab-navigointia, expo location, dotenv API-avaimen turvallisuuden vuoksi, datahakua varten käytössä RapidApi: Travel-Advisor. 
 
+https://expo.dev/@ivan_kolesov/mytravelapp
+
 <p float="left">
 <img src="https://user-images.githubusercontent.com/83761950/167290883-a5853881-6850-413a-8638-4cc4385acbb5.PNG" width="24%" height="24%">
 <img src="https://user-images.githubusercontent.com/83761950/167290889-b0180ab7-3897-4d28-b613-43f6f19a8053.PNG" width="24%" height="24%">
