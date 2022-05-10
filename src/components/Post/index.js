@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, Image, Pressable } from "react-native";
+import { Text, Image, Pressable } from "react-native";
 import styles from "./styles";
 import Fontisto from "react-native-vector-icons/Fontisto";
 import { useNavigation } from "@react-navigation/native";

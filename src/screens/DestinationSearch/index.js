@@ -1,11 +1,9 @@
-import { useState } from "react";
-import { View, TextInput, Text, FlatList, Pressable } from "react-native";
+import { View } from "react-native";
 import styles from "./styles";
-import Entypo from "react-native-vector-icons/Entypo";
+
+import { API_KEY_2 } from "@env";
 
 import { useNavigation } from "@react-navigation/native";
-
-import searchFakeData from "../../../assets/data/searchFakeData";
 
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 
@@ -20,9 +18,6 @@ export default function DestinationSearch() {
          <GooglePlacesAutocomplete
             placeholder="Search"
             onPress={(data, details = null) => {
-               // 'details' is provided when fetchDetails = true
-               //console.log(data, details);
-               //console.log(details);
                navigation.navigate("City Results", { cityData: details });
             }}
             fetchDetails
@@ -30,7 +25,7 @@ export default function DestinationSearch() {
                textInput: styles.textInput,
             }}
             query={{
-               key: "AIzaSyAJA5ohJ47e8P4XccPpdz9zVMPiEjm-p6M",
+               key: API_KEY_2,
                language: "en",
                types: "(cities)",
             }}
