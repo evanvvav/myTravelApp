@@ -5,6 +5,7 @@ import DestinationSearch from "../screens/DestinationSearch";
 import HomeTabNavigator from "./HomeTabNavigator";
 import SearchResultsScreen from "../screens/SearchResults";
 import PostScreen from "../screens/PostScreen";
+import CityResultsScreen from "../screens/CityResults";
 
 const Stack = createStackNavigator();
 
@@ -19,7 +20,6 @@ export default function Router() {
                   headerShown: false,
                }}
             />
-
             <Stack.Screen
                name={"Destination Search"}
                component={DestinationSearch}
@@ -30,6 +30,13 @@ export default function Router() {
             <Stack.Screen
                name={"Hotel Results"}
                component={SearchResultsScreen}
+               options={{
+                  title: "Find your place to stay",
+               }}
+            />
+            <Stack.Screen
+               name={"City Results"}
+               component={CityResultsScreen}
                options={{
                   title: "Find your place to stay",
                }}

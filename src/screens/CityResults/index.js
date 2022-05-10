@@ -4,12 +4,14 @@ import { View, FlatList, ActivityIndicator, Dimensions } from "react-native";
 import Post from "../../components/Post";
 import { StyleSheet } from "react-native";
 import { getPlacesData } from "../../api";
+import { useRoute } from "@react-navigation/native";
 
 import DropDownPicker from "react-native-dropdown-picker";
 
-import * as Location from "expo-location";
+export default function CityResultsScreen(props) {
+   const route = useRoute();
+   const cityData = route.params.cityData;
 
-export default function SearchResultsScreen() {
    const [places, setPlaces] = useState([false]);
    const [coordinates, setCoordinates] = useState({});
    const [open, setOpen] = useState(false);
@@ -21,21 +23,14 @@ export default function SearchResultsScreen() {
       { label: "2 star", value: "1,2" },
    ]);
 
+   console.log(cityData);
+
    useEffect(() => {
       (async () => {
-         let { status } = await Location.requestForegroundPermissionsAsync();
-         if (status !== "granted") {
-            setErrorMsg("Permission to access location was denied");
-            return;
-         }
-         let location = await Location.getCurrentPositionAsync();
-         //accuracy location . high
          setCoordinates({
-            lat: location.coords.latitude,
-            lng: location.coords.longitude,
+            lat: cityData.geometry.location.lat,
+            lng: cityData.geometry.location.lng,
          });
-
-         console.log(coordinates);
       })();
    }, []);
 

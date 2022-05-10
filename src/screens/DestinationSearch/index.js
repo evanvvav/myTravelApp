@@ -7,42 +7,35 @@ import { useNavigation } from "@react-navigation/native";
 
 import searchFakeData from "../../../assets/data/searchFakeData";
 
-export default function DestinationSearch() {
-   const [inputText, setInputText] = useState("");
+import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 
+import SuggestionRow from "./SuggestionRow";
+
+export default function DestinationSearch() {
    const navigation = useNavigation();
 
    return (
       <View style={styles.container}>
          {/* Input component */}
-         <TextInput
-            style={styles.textInput}
-            placeholder="Where are you going?"
-            value={inputText}
-            onChangeText={setInputText}
-         />
-
-         {/* List of destination */}
-         <FlatList
-            data={searchFakeData}
-            renderItem={({ item }) => (
-               <Pressable
-                  onPress={() =>
-                     navigation.navigate("Close to you", {
-                        screen: "Explore",
-                        params: {
-                           screen: "Close to you",
-                        },
-                     })
-                  }
-                  style={styles.row}
-               >
-                  <View style={styles.iconContainer}>
-                     <Entypo name={"location-pin"} size={30} />
-                  </View>
-                  <Text style={styles.text}>{item.description}</Text>
-               </Pressable>
-            )}
+         <GooglePlacesAutocomplete
+            placeholder="Search"
+            onPress={(data, details = null) => {
+               // 'details' is provided when fetchDetails = true
+               //console.log(data, details);
+               //console.log(details);
+               navigation.navigate("City Results", { cityData: details });
+            }}
+            fetchDetails
+            styles={{
+               textInput: styles.textInput,
+            }}
+            query={{
+               key: "AIzaSyAJA5ohJ47e8P4XccPpdz9zVMPiEjm-p6M",
+               language: "en",
+               types: "(cities)",
+            }}
+            suppressDefaultStyles
+            renderRow={(item) => <SuggestionRow item={item} />}
          />
       </View>
    );
