@@ -9,6 +9,9 @@ const styles = StyleSheet.create({
    textInput: {
       fontSize: 20,
       marginBottom: 20,
+      color: "black",
+      borderBottomWidth: 1,
+      borderColor: "black",
    },
    row: {
       flexDirection: "row",

@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
    picker: {
       color: "black",
       width: Dimensions.get("screen").width - 40,
-      marginTop: "10%",
+      marginTop: 10,
       marginBottom: 10,
       marginHorizontal: 20,
       borderRadius: 12,

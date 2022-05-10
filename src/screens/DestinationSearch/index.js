@@ -16,7 +16,8 @@ export default function DestinationSearch() {
       <View style={styles.container}>
          {/* Input component */}
          <GooglePlacesAutocomplete
-            placeholder="Search"
+            placeholder="What city you looking for"
+            placeholderTextColor="fff"
             onPress={(data, details = null) => {
                navigation.navigate("City Results", { cityData: details });
             }}

@@ -28,7 +28,10 @@ export default function SearchResultsScreen() {
             setErrorMsg("Permission to access location was denied");
             return;
          }
-         let location = await Location.getCurrentPositionAsync();
+         let location = await Location.getCurrentPositionAsync({
+            enableHighAccuracy: true,
+            accuracy: Location.Accuracy.High,
+         });
          //accuracy location . high
          setCoordinates({
             lat: location.coords.latitude,
